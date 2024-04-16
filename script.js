@@ -49,21 +49,24 @@ const displayAverageSalary = function(employeesArray)
   }
   averageSalary = parseFloat(totalSalary / employeesArray.length)
   console.log(`The average employee salary between our ${employeesArray.length} employee(s) is ${averageSalary}`);
-
-
 }
 
 // Select a random employee
 const getRandomEmployee = function(employeesArray) 
 {
   // TODO: Select and display a random employee
-
+  let minCeil = Math.ceil(0);
+  let maxFloor = Math.floor(employeesArray.length);
+  let randomWinner = Math.floor(Math.random() * (maxFloor - minCeil) + minCeil)
+  console.log(`Congratulations to ${employeesArray[randomWinner]}, our random drawing winner!`)
+  return randomWinner
 }
 
 /*
-  ====================
+  ==================================================================================================================================
   STARTER CODE
   Do not modify any of the code below this line:
+  ==================================================================================================================================
 */
 
 // Display employee data in an HTML table
