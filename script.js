@@ -1,4 +1,3 @@
-let keepGoing = true
 const employeesArray = []
 // Get a reference to the #add-employees-btn element
 const addEmployeesBtn = document.querySelector('#add-employees-btn');
@@ -7,7 +6,7 @@ const addEmployeesBtn = document.querySelector('#add-employees-btn');
 const collectEmployees = function() 
 {
   // TODO: Get user input to create and return an array of employee objects
-
+  let keepGoing = true
     while (keepGoing === true)
     {
         let newEmployeeFN = window.prompt("Please enter the employee's first name")
@@ -20,28 +19,33 @@ const collectEmployees = function()
           }
         let newEmployeeSalary = window.prompt("Please enter the employee's salary")
 
-        let employees =
+        let employee =
         {
             firstName: newEmployeeFN,
             lastName: newEmployeeLN,
-            salary: newEmployeeSalary
+            salary: parseInt(newEmployeeSalary)
         };
-        
-        employeesArray.push(employees);
+        employeesArray.push(employee);
 
-
-        keepGoing = window.confirm("Add another employee?");
-                  
+        keepGoing = window.confirm("Add another employee?");           
     }
-    
     console.log(employeesArray)
+    return employeesArray;
 }
 
 
 // Display the average salary
 const displayAverageSalary = function(employeesArray) 
 {
+  let totalSalary = 0;
   // TODO: Calculate and display the average salary
+  for(let employee of employeesArray) 
+  { 
+    totalSalary = totalSalary + employee.salary
+    
+  }
+  console.log(totalSalary/employeesArray.length);
+
 
 }
 
