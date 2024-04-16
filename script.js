@@ -58,8 +58,9 @@ const getRandomEmployee = function(employeesArray)
   let minCeil = Math.ceil(0);
   let maxFloor = Math.floor(employeesArray.length);
   let randomWinner = Math.floor(Math.random() * (maxFloor - minCeil) + minCeil)
-  console.log(`Congratulations to ${employeesArray[randomWinner]}, our random drawing winner!`)
-  return randomWinner
+  console.log(randomWinner)
+  console.log(`Congratulations to ${employeesArray[randomWinner].firstName} ${employeesArray[randomWinner].lastName}, our random drawing winner!`)
+  return employeesArray[randomWinner]
 }
 
 /*
