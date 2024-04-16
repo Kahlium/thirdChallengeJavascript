@@ -10,13 +10,16 @@ const collectEmployees = function()
     while (keepGoing === true)
     {
         let newEmployeeFN = window.prompt("Please enter the employee's first name")
-        if (!newEmployeeFN) {
+        //if return's are to make sure that all fields are filled
+        if (!newEmployeeFN) 
+        {
             return;
-          }
+        }
         let newEmployeeLN = window.prompt("Please enter the employee's last name")
-        if (!newEmployeeLN) {
+        if (!newEmployeeLN) 
+        {
             return;
-          }
+        }
         let newEmployeeSalary = window.prompt("Please enter the employee's salary")
 
         let employee =
@@ -37,14 +40,15 @@ const collectEmployees = function()
 // Display the average salary
 const displayAverageSalary = function(employeesArray) 
 {
-  let totalSalary = 0;
   // TODO: Calculate and display the average salary
+  let totalSalary = 0;
+  let averageSalary = 0;
   for(let employee of employeesArray) 
   { 
     totalSalary = totalSalary + employee.salary
-    
   }
-  console.log(totalSalary/employeesArray.length);
+  averageSalary = parseFloat(totalSalary / employeesArray.length)
+  console.log(`The average employee salary between our ${employeesArray.length} employee(s) is ${averageSalary}`);
 
 
 }
