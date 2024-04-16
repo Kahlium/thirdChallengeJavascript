@@ -32,7 +32,7 @@ const collectEmployees = function()
 
         keepGoing = window.confirm("Add another employee?");           
     }
-    console.log(employeesArray)
+    //console.log(employeesArray)
     return employeesArray;
 }
 
@@ -58,7 +58,7 @@ const getRandomEmployee = function(employeesArray)
   let minCeil = Math.ceil(0);
   let maxFloor = Math.floor(employeesArray.length);
   let randomWinner = Math.floor(Math.random() * (maxFloor - minCeil) + minCeil)
-  console.log(randomWinner)
+  //console.log(randomWinner)
   console.log(`Congratulations to ${employeesArray[randomWinner].firstName} ${employeesArray[randomWinner].lastName}, our random drawing winner!`)
   return employeesArray[randomWinner]
 }
